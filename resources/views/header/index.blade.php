@@ -37,10 +37,10 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li>
-                            <a href="#">Job Listings</a>
+                            <a href="#jobListing">Job Listings</a>
                         </li>
                         <li>
                             <a href="/services">Services</a>
