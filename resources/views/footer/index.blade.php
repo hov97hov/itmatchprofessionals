@@ -3,39 +3,14 @@
         <div class="footer-content">
             <div class="footer-item footer-search-trending">
                 <div class="trending-title">
-                    <h3>Search Trending</h3>
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                        <a href="#">Graphic Design</a>
-                    </li>
-                    <li>
-                        <a href="#">Web Developers</a>
-                    </li>
-                    <li>
-                        <a href="#">Python</a>
-                    </li>
-                    <li>
-                        <a href="#">HTML5</a>
-                    </li>
-                    <li>
-                        <a href="#">CSS3</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-item footer-search-trending">
-                <div class="trending-title">
                     <h3>Company</h3>
                 </div>
                 <ul>
                     <li>
-                        <a href="#">Career</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#">Resources</a>
+                        <a href="#">Over ons</a>
                     </li>
                 </ul>
             </div>
@@ -45,19 +20,19 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="#">Support</a>
+                        <a href="#">Vacatures</a>
                     </li>
                     <li>
-                        <a href="#">Privacy</a>
+                        <a href="#">Veelgestelde vragen</a>
                     </li>
                     <li>
-                        <a href="/services">Terms of Service</a>
+                        <a href="/contact-us">Contact</a>
                     </li>
                 </ul>
             </div>
             <div class="footer-item footer-search-icon">
                 <div class="trending-title">
-                    <h3>Contact Us</h3>
+                    <h3>Volg ons:</h3>
                 </div>
                 <ul>
                     <li>
