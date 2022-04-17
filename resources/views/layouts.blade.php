@@ -20,7 +20,6 @@
         @yield('content')
         {{--Footer--}}
         @include('footer.index')
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         <script src="{{ asset('js/costum/main.js') }}"></script>
@@ -32,5 +31,6 @@
                 }
             })
         </script>
+
     </body>
 </html>
