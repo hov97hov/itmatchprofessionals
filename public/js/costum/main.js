@@ -187,6 +187,9 @@ function search() {
                 success: function(data) {
                     if (data.length > 0) {
                         $('.search-result').show()
+                        $(document).on('click', '.fa-solid.fa-xmark', function () {
+                            $('.search-result').hide()
+                        });
                         var elem = [];
                         for (let i = 0; i < data.length; i++) {
                             elem += ` <div class="job-list-item">

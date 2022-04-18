@@ -26,7 +26,7 @@
                         </form>
                         <div class="search-result">
                             <section class="job-list">
-                                <i class="fa-solid fa-circle-xmark"></i>
+                                <i class="fa-solid fa-xmark"></i>
                                 <div class="job-list-content">
                                     <div class="container">
                                         <div class="job-list-items">

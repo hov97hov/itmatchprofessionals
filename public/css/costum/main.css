@@ -293,7 +293,10 @@ ul {
     margin-left: 30px;
     visibility: hidden;
 }
-
+.fa-xmark {
+    font-size: 26px;
+    cursor: pointer;
+}
 /*career statictics*/
 .careers-statistics {
     height: 397px;
