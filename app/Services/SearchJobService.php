@@ -26,7 +26,7 @@ class SearchJobService
      */
     public function list(): LengthAwarePaginator
     {
-        return Vacancy::query()->paginate(15);
+        return Vacancy::query()->paginate(10);
 
     }
 

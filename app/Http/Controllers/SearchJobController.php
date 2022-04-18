@@ -29,6 +29,8 @@ class SearchJobController extends Controller
      */
     public function list(): LengthAwarePaginator
     {
-        return $this->searchJobService->list();
+        $vacancies = $this->searchJobService->list();
+
+        return $vacancies;
     }
 }

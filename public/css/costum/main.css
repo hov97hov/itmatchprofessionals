@@ -202,7 +202,9 @@ ul {
     color: rgba(255,255,255,.6);
     text-align: center;
 }
-.banner .banner-content .banner-content-search .search-job {}
+.banner .banner-content .banner-content-search .search-job {
+    position: relative;
+}
 .banner .banner-content .banner-content-search .search-job form {
     display: flex;
 }
@@ -264,6 +266,26 @@ ul {
 }
 .banner .banner-content .banner-content-search .search-job form .job-btn button .fa-magnifying-glass {
     margin-right: 5px;
+}
+
+.search-result {
+    display: none;
+    width: 100%;
+    height: 360px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 60px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: -1px 0px 6px 2px rgb(0 0 0 / 20%);
+    transition: 0.25s ease;
+}
+
+
+.search-result .job-list {
+    position: relative;
+    padding-top: 0;
 }
 
 .error-message {
@@ -386,6 +408,7 @@ ul {
     color: #6D6C8B;
     font-size: 26px;
     margin: 0 0 10px;
+    word-break: break-word;
 }
 .job-list .job-list-content .job-list-items .job-list-item .item-img-title .title h3 {
     color: #5C6066;
@@ -1006,6 +1029,9 @@ ul {
     .footer .footer-content .footer-item.footer-search-icon ul {
         flex-wrap: wrap;
     }
+    .search-result {
+        top: 130px;
+    }
 }
 @media screen and (max-width: 575px) {
     .container {
@@ -1028,5 +1054,8 @@ ul {
     }
     .header .header-container header .header-logo a {
         width: 80px;
+    }
+    .search-result {
+        top: 205px;
     }
 }

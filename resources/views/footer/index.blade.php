@@ -7,10 +7,10 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/download">Home</a>
                     </li>
                     <li>
-                        <a href="#">Over ons</a>
+                        <a href="/download-over">Over ons</a>
                     </li>
                 </ul>
             </div>
@@ -23,7 +23,7 @@
                         <a href="#">Vacatures</a>
                     </li>
                     <li>
-                        <a href="#">Veelgestelde vragen</a>
+                        <a href="/download-veelgestelde">Veelgestelde vragen</a>
                     </li>
                     <li>
                         <a href="/contact-us">Contact</a>

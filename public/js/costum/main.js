@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    getJobList()
+    search()
+    slider()
     $('.header .header-container header .mobile-hamburger').on('click', function () {
         $('.header .header-container header .header-mobile-menu').css({
             right: '0'
@@ -9,6 +12,7 @@ $(document).ready(function () {
             right: '-300px'
         })
     })
+
     $("article a[href^='#']").on('click', function(e) {
         console.log('triggered');
         // prevent default anchor click behavior
@@ -21,13 +25,9 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: $(this.hash).offset().top
         }, 600, function(){
-
-            // when done, add hash to url
-            // (default click behaviour)
             window.location.hash = hash;
         });
     });
-
     //*form*//
     $('#sendForm').on('submit', function (e) {
         e.preventDefault()
@@ -124,12 +124,54 @@ $(document).ready(function () {
         }
     })
 
+})
+
+function getJobList() {
+    $.get('/job-list',  // url
+        function (data) {  // success callback
+            if (data.data.length > 0) {
+                var elem = [];
+                for (let i = 0; i < data.data.length; i++) {
+                    elem += ` <div class="job-list-item">
+                        <div class="item-type">Frelacner</div>
+                        <div class="item-img-title">
+                            <img src="/images/job-img/item-img.webp.webp" alt="">
+                            <div class="title">
+                                <h1>${data.data[i].title}</h1>
+                                <h3>${data.data[i].description}</h3>
+                            </div>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-info-name">
+                                <h3>over de opdracht</h3>
+                            </div>
+                            <div class="item-tarif">
+                                <i class="fa-solid fa-euro-sign"></i>
+                                <span>${data.data[i].tarief}</span>
+                            </div>
+                            <div class="item-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>${data.data[i].location}</span>
+                            </div>
+                            <div class="item-hours">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>${data.data[i].duration}</span>
+                            </div>
+                        </div>
+                    </div>`
+                }
+                $('.job-result-page').html(elem)
+            }
+        });
+}
+function search() {
     $('#searchJob').on('submit', function (e) {
         e.preventDefault()
         var form = $(this);
         var searchValue = form.find('input[name=search_job]').val(),
             selectValue = form.find('select[name=job_select]').val();
         if (searchValue === '' || selectValue === '') {
+            $('.search-result').hide()
             return false;
         } else {
             $.ajax({
@@ -142,16 +184,18 @@ $(document).ready(function () {
                     search: searchValue,
                     selectType: selectValue,
                 },
-                success: function(rensponse) {
-                    console.log(rensponse)
-                    if (rensponse) {
-                        var result = `<div class="job-list-item">
-                        <div class="item-type">freelance</div>
+                success: function(data) {
+                    if (data.length > 0) {
+                        $('.search-result').show()
+                        var elem = [];
+                        for (let i = 0; i < data.length; i++) {
+                            elem += ` <div class="job-list-item">
+                        <div class="item-type">Frelacner</div>
                         <div class="item-img-title">
                             <img src="/images/job-img/item-img.webp.webp" alt="">
                             <div class="title">
-                                <h1>Regiemedewerker belasningen</h1>
-                                <h3>Gemeente Voorschoten</h3>
+                                <h1>${data[i].title}</h1>
+                                <h3>${data[i].description}</h3>
                             </div>
                         </div>
                         <div class="item-info">
@@ -160,30 +204,37 @@ $(document).ready(function () {
                             </div>
                             <div class="item-tarif">
                                 <i class="fa-solid fa-euro-sign"></i>
-                                <span>Geen max tarief</span>
+                                <span>${data[i].tarief}</span>
                             </div>
                             <div class="item-location">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <span>Zuid Holland</span>
+                                <span>${data[i].location}</span>
                             </div>
                             <div class="item-hours">
                                 <i class="fa-solid fa-clock"></i>
-                                <span>12 uur p/w</span>
+                                <span>${data[i].duration}</span>
                             </div>
                         </div>
                     </div>`
-                        $('.job-list-result').html(result)
+                        }
+                    } else {
+                        $('.search-result').hide()
                     }
+                    $('.job-list-search').html(elem)
                 },
             });
         }
     })
-})
-var swiper = new Swiper(".mySwiper", {
-    pagination: {
-        el: ".swiper-pagination",
-    },
-    autoplay: {
-        delay: 2000,
-    },
-});
+}
+function slider () {
+    var swiper = new Swiper(".mySwiper", {
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        autoplay: {
+            delay: 2000,
+        },
+    });
+}
+
+
