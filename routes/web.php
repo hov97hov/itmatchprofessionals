@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('content', [HomeController::class, 'index']);
 Route::get('/contact-us', [ContactUsController::class, 'index']);
-Route::post('/send-form', [ContactSendController::class, 'send']);
+Route::post('/send-form', [ContactUsController::class, 'sendContactMail']);
 Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/search-job', [SearchJobController::class, 'search']);
+Route::get('/job-list', [SearchJobController::class, 'list']);

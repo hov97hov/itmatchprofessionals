@@ -101,8 +101,8 @@ $(document).ready(function () {
                 url: '/send-form',
                 type: 'POST',
                 data: {
-                    name: name,
-                    lastName: lastName,
+                    first_name: name,
+                    last_name: lastName,
                     email: email,
                     subject: subject,
                     message: message
