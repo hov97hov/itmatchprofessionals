@@ -70,6 +70,7 @@ class SearchJobController extends AdminController
         $form->radio('work_type', 'Work Type')->options(['Part Time', 'Full Time', 'Freelancer'])->default('Part Time')->stacked();
         $form->text('tarief', __('Tarief'));
         $form->text('duration', __('Duration'));
+        $form->image('images', __('Images'));
         $form->text('location', __('Location'));
 
         return $form;

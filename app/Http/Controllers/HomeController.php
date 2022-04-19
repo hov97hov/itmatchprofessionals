@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\SearchJobService;
 use Illuminate\Http\Request;
 
-class SearchJobController extends Controller
+class HomeController extends Controller
 {
     private $searchJobService;
 
@@ -17,9 +17,10 @@ class SearchJobController extends Controller
     /**
      * @throws \Exception
      */
-    public function search(Request $request): array
+    public function index()
     {
-        return $this->searchJobService->searchJobService($request);
-    }
+        $vacancies = $this->searchJobService->list();
 
+        return view('content.index', ['vacancies' => $vacancies]);
+    }
 }

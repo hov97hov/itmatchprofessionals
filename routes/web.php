@@ -5,6 +5,7 @@ use \App\Http\Controllers\ContactUsController;
 use \App\Http\Controllers\ServicesController;
 use \App\Http\Controllers\SearchJobController;
 use \App\Http\Controllers\DownloadPdfController;
+use \App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,15 +16,11 @@ use \App\Http\Controllers\DownloadPdfController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('content.index');
-});
-
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/download-veelgestelde', [DownloadPdfController::class, 'downloadVeelgesteldePdf']);
 Route::get('/download-over', [DownloadPdfController::class, 'downloadVeelgesteldePdf']);
 Route::get('/contact-us', [ContactUsController::class, 'index']);
 Route::post('/send-form', [ContactUsController::class, 'sendContactMail']);
 Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/search-job', [SearchJobController::class, 'search']);
-Route::get('/job-list', [SearchJobController::class, 'list']);
+

@@ -16,14 +16,8 @@ class ServicesController extends Controller
 
     public function index()
     {
-        return view('services.index');
-    }
+        $services = $this->servicesService->list();
 
-    /**
-     * @throws \Exception
-     */
-    public function list(): LengthAwarePaginator
-    {
-        return $this->servicesService->list();
+        return view('services.index', ['services' => $services]);
     }
 }

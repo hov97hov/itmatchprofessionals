@@ -404,8 +404,9 @@ ul {
     margin: 0 0 40px;
 }
 .job-list .job-list-content .job-list-items .job-list-item .item-img-title img {
-    width: 100px;
+    width: 190px;
     margin-right: 40px;
+    border-radius: 10px;
 }
 .job-list .job-list-content .job-list-items .job-list-item .item-img-title .title h1 {
     color: #6D6C8B;

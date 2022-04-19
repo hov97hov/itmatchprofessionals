@@ -29,10 +29,7 @@ class ServicesController extends AdminController
 
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
-        $grid->column('img', __('Image'))->display(function () {
-            $im= url('storage/'.$this->img);
-            return  "<img src='$im' >";
-        });
+        $grid->column('icon', __('Icon'));
 
         return $grid;
     }
@@ -49,10 +46,7 @@ class ServicesController extends AdminController
 
         $show->field('title', __('Title'));
         $show->field('description', __('Description'));
-        $show->field('img', __('Image'))->display(function () {
-            $im= url('storage/'.$this->img);
-            return  "<img src='$im' >";
-        });
+        $show->field('icon', __('Icon'));
 
         return $show;
     }
@@ -68,7 +62,7 @@ class ServicesController extends AdminController
 
         $form->text('title', __('Title'));
         $form->text('description', __('Description'));
-        $form->image('img', __('Image'));
+        $form->icon('icon', __('Icon'));
 
         return $form;
     }

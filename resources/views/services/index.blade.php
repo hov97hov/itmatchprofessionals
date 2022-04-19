@@ -22,72 +22,19 @@
     <section class="service-block">
         <div class="container">
             <div class="service-content">
-                <div class="service-item">
+                @foreach($services as $service)
+                    <div class="service-item">
                     <div class="icon">
-                        <i class="fa-solid fa-magnet"></i>
+                        <i class="fa {{$service->icon}}"></i>
                     </div>
                     <div class="title">
-                        <h3>Design Strategy</h3>
+                        <h3>{{$service->title}}</h3>
                     </div>
                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam assumenda.</p>
+                        <p>{{$service->description}}</p>
                     </div>
                 </div>
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="fa-solid fa-plane-up"></i>
-                    </div>
-                    <div class="title">
-                        <h3>Marketing Strategy</h3>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam assumenda.</p>
-                    </div>
-                </div>
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="fa-solid fa-laptop"></i>
-                    </div>
-                    <div class="title">
-                        <h3>Web Design</h3>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam assumenda.</p>
-                    </div>
-                </div>
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div class="title">
-                        <h3>Search Engine Results</h3>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam assumenda.</p>
-                    </div>
-                </div>
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </div>
-                    <div class="title">
-                        <h3>Market Leading </h3>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam assumenda.</p>
-                    </div>
-                </div>
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="fa-solid fa-plug"></i>
-                    </div>
-                    <div class="title">
-                        <h3>Pixel Perfect Design</h3>
-                    </div>
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit facilis, pariatur harum labore aperiam assumenda.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
