@@ -7,6 +7,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\Storage;
 
 class ServicesController extends AdminController
 {
@@ -28,16 +29,10 @@ class ServicesController extends AdminController
 
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
-        $grid->column('img', __('Image'));
-        $grid->images()->display(function ($images) {
-
-            return json_decode($images, true);
-
-        })->map(function ($path) {
-
-            return 'http://localhost/images/'. $path;
-
-        })->image();
+        $grid->column('img', __('Image'))->display(function () {
+            $im= url('storage/'.$this->img);
+            return  "<img src='$im' >";
+        });
 
         return $grid;
     }
@@ -54,8 +49,10 @@ class ServicesController extends AdminController
 
         $show->field('title', __('Title'));
         $show->field('description', __('Description'));
-        $show->field('img', __('Image'))->image('localhost/storage/images');;
-        $show->avatar()->image();
+        $show->field('img', __('Image'))->display(function () {
+            $im= url('storage/'.$this->img);
+            return  "<img src='$im' >";
+        });
 
         return $show;
     }
