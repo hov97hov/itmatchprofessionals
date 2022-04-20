@@ -35,6 +35,9 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="paginate">
+                    {{ $services->links() }}
+                </div>
             </div>
         </div>
     </section>

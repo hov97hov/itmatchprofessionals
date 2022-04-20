@@ -44,7 +44,9 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="paginate">
                         {{ $vacancies->links() }}
+                    </div>
                 </div>
             </div>
         </div>

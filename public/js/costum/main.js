@@ -31,14 +31,9 @@ $(document).ready(function () {
     $('.banner .banner-content .banner-content-search .search-job form .job-select').click( function(e) {
         e.stopPropagation();
     });
-
-
     $("article a[href^='#']").on('click', function(e) {
-        console.log('triggered');
-        // prevent default anchor click behavior
         e.preventDefault();
 
-        // store hash
         var hash = this.hash;
 
         // animate
@@ -52,24 +47,24 @@ $(document).ready(function () {
     $('#sendForm').on('submit', function (e) {
         e.preventDefault()
         var form = $(this);
-        var name = form.find('input[name=name]').val(),
+        var name = form.find('input[name=first_name]').val(),
             lastName = form.find('input[name=last_name]').val(),
             email = form.find('input[name=email]').val(),
             subject = form.find('input[name=subject]').val(),
             message = form.find('textarea[name=message]').val();
 
         if (name === '') {
-            $(this).find('input[name=name]').css({
-                border: '1px solid red'
+            $(this).find('input[name=first_name]').css({
+                border: '1px solid #d40000'
             });
         } else  {
-            $(this).find('input[name=name]').css({
+            $(this).find('input[name=first_name]').css({
                 border: '1px solid green'
             });
         }
         if (lastName === '') {
             $(this).find('input[name=last_name]').css({
-                border: '1px solid red'
+                border: '1px solid #d40000'
             });
         } else  {
             $(this).find('input[name=last_name]').css({
@@ -78,7 +73,7 @@ $(document).ready(function () {
         }
         if (email === '') {
             $(this).find('input[name=email]').css({
-                border: '1px solid red'
+                border: '1px solid #d40000'
             });
         } else  {
             $(this).find('input[name=email]').css({
@@ -87,7 +82,7 @@ $(document).ready(function () {
         }
         if (subject === '') {
             $(this).find('input[name=subject]').css({
-                border: '1px solid red'
+                border: '1px solid #d40000'
             });
         } else  {
             $(this).find('input[name=subject]').css({
@@ -96,7 +91,7 @@ $(document).ready(function () {
         }
         if (message === '') {
             $(this).find('textarea[name=message]').css({
-                border: '1px solid red'
+                border: '1px solid #d40000'
             });
         } else  {
             $(this).find('textarea[name=message]').css({
@@ -106,7 +101,8 @@ $(document).ready(function () {
         if (name === '' || lastName === '' || email === '' || subject === '' || message === '' ) {
             let errorMessage = $('.error-message');
             errorMessage.css({
-                visibility: 'visible'
+                visibility: 'visible',
+                color: '#d40000'
             })
             errorMessage.html('fill in all the fields')
             return false;
@@ -136,9 +132,61 @@ $(document).ready(function () {
                     }
                 },
                 error: function (error) {
-                    $('.error-message').css({
-                        visibility: 'visible'
-                    }).html(error.statusText);
+                    if (error.responseJSON.errors.first_name) {
+                        $('.error-message-name').css({visibility: 'visible'}).html(error.responseJSON.errors.first_name)
+                        $('input[name=first_name]').css({
+                            border: '1px solid #d40000'
+                        });
+                    } else{
+                        $('.error-message-name').css({visibility: 'hidden'}).html('')
+                        $('input[name=first_name]').css({
+                            border: '1px solid green'
+                        });
+                    }
+                    if (error.responseJSON.errors.last_name) {
+                        $('.error-message-last-name').css({visibility: 'visible'}).html(error.responseJSON.errors.last_name)
+                        $('input[name=last_name]').css({
+                            border: '1px solid #d40000'
+                        });
+                    } else{
+                        $('.error-message-last-name').css({visibility: 'hidden'}).html('')
+                        $('input[name=last_name]').css({
+                            border: '1px solid green'
+                        });
+                    }
+                    if (error.responseJSON.errors.email) {
+                        $('.error-message-email').css({visibility: 'visible'}).html(error.responseJSON.errors.email)
+                        $('input[name=email]').css({
+                            border: '1px solid #d40000'
+                        });
+                    } else{
+                        $('.error-message-email').css({visibility: 'hidden'}).html('')
+                        $('input[name=email]').css({
+                            border: '1px solid green'
+                        });
+                    }
+                    if (error.responseJSON.errors.subject) {
+                        $('.error-message-subject').css({visibility: 'visible'}).html(error.responseJSON.errors.subject)
+                        $('input[name=subject]').css({
+                            border: '1px solid #d40000'
+                        });
+                    } else{
+                        $('.error-message-subject').css({visibility: 'hidden'}).html('')
+                        $('input[name=subject]').css({
+                            border: '1px solid green'
+                        });
+                    }
+                    if (error.responseJSON.errors.message) {
+                        $('.error-message-message').css({visibility: 'visible'}).html(error.responseJSON.errors.message)
+                        $('textarea[name=message]').css({
+                            border: '1px solid #d40000'
+                        });
+                    } else{
+                        $('.error-message-message').css({visibility: 'hidden'}).html('')
+                        $('textarea[name=message]').css({
+                            border: '1px solid green'
+                        });
+                    }
                 }
             });
         }

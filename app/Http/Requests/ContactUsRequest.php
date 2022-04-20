@@ -29,11 +29,11 @@ class ContactUsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string'],
-            'last_name' => ['required', 'string'],
+            'first_name' => ['required', 'string', 'min:2'],
+            'last_name' => ['required', 'string', 'min:2'],
             'email' => ['required', 'email'],
-            'subject' => ['nullable', 'string'],
-            'message' => ['required', 'string']
+            'subject' => ['nullable', 'string', 'min:10'],
+            'message' => ['required', 'string', 'min:50', 'max:255']
 
         ];
     }

@@ -405,6 +405,7 @@ ul {
 }
 .job-list .job-list-content .job-list-items .job-list-item .item-img-title img {
     width: 190px;
+    height: 100px;
     margin-right: 40px;
     border-radius: 10px;
 }
@@ -759,6 +760,7 @@ ul {
     font-size: 1rem;
     line-height: 1.5;
     transition: 0.25s ease;
+    border: 1px solid;
 }
 .contact-us .contact-us-content .contact-form .btn button:hover {
     background: #049aad;
@@ -864,7 +866,79 @@ ul {
     color: #7f848c;
 }
 
+.paginate nav div:first-child {
+    display: none;
+}
+.paginate nav svg {
+    width: 30px;
+}
+.paginate nav div:last-child span {
+    display: flex;
+    align-items: center;
+}
+.paginate {
+    margin: 50px 0;
+}
+.paginate nav div:last-child span span, .paginate nav div:last-child span a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #049aad;
+    margin: 0 5px;
+    color: #ffffff;
+    transition: 0.25s ease;
+}
 
+.paginate nav div:last-child span span, .paginate nav div:last-child span a:hover {
+    background: #00b4cb;
+    color: #ffffff;
+}
+
+.paginate nav div:last-child span a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #049aad;
+    margin: 0 5px;
+    color: #000000;
+}
+.error-message-email {
+    color: #d40000;
+    margin: 5px 0;
+    display: block;
+    visibility: hidden;
+}
+.error-message-name {
+    color: #d40000;
+    margin: 5px 0;
+    display: block;
+    visibility: hidden;
+}
+.error-message-last-name {
+    color: #d40000;
+    margin: 5px 0;
+    display: block;
+    visibility: hidden;
+}
+.error-message-subject {
+    color: #d40000;
+    margin: 5px 0;
+    display: block;
+    visibility: hidden;
+}
+.error-message-message {
+    color: #d40000;
+    margin: 5px 0;
+    display: block;
+    visibility: hidden;
+}
 @media screen and (max-width: 1200px) {
     .header .header-container header .mobile-hamburger {
         display: block;
@@ -1061,5 +1135,15 @@ ul {
     }
     .search-result {
         top: 205px;
+    }
+    .job-list .job-list-content .job-list-items .job-list-item .item-img-title img {
+        width: 130px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .banner .banner-content .banner-content-search .position-info {
+        transform: translate(-50%, -40%);
     }
 }

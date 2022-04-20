@@ -17,7 +17,7 @@ class ServicesService
      */
     public function list(): LengthAwarePaginator
     {
-        return Services::query()->paginate(15);
+        return Services::query()->paginate(6);
 
     }
 

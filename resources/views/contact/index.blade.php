@@ -27,24 +27,29 @@
                         <div class="name">
                             <div>
                                 <label for="name">First Name</label>
-                                <input type="text" id="name" name="name">
+                                <input type="text" id="name" name="first_name">
+                                <span class="error-message-name"></span>
                             </div>
                             <div>
                                 <label for="lastName">Last Name</label>
                                 <input type="text" id="lastName" name="last_name">
+                                <span class="error-message-last-name"></span>
                             </div>
                         </div>
                         <div class="email">
                             <label for="email">Email</label>
                             <input type="text" id="email" name="email">
+                            <span class="error-message-email">555</span>
                         </div>
                         <div class="subject">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" name="subject">
+                            <span class="error-message-subject"></span>
                         </div>
                         <div class="message">
                             <label for="message">Message</label>
                             <textarea cols="30" rows="7" placeholder="Write your notes or questions here..." id="message" name="message"></textarea>
+                            <span class="error-message-message"></span>
                         </div>
                         <div class="btn">
                             <button type="submit">Send Message</button>
