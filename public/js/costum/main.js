@@ -129,6 +129,25 @@ $(document).ready(function () {
                             color: 'green',
                             visibility: 'visible'
                         }).html('The email was sent successfully');
+                        setTimeout(function () {
+                            $('.error-message').hide()
+                        },5000)
+                            name = form.find('input[name=first_name]').css({
+                                border: "1px solid #000000"
+                            }).val('');
+                            lastName = form.find('input[name=last_name]').css({
+                                border: "1px solid #000000"
+                            }).val('');
+                            email = form.find('input[name=email]').css({
+                                border: "1px solid #000000"
+                            }).val('');
+                            subject = form.find('input[name=subject]').css({
+                                border: "1px solid #000000"
+                            }).val('');
+                            message = form.find('textarea[name=message]').css({
+                                border: "1px solid #000000"
+                            }).val('');
+                            $('.error-message-message').hide()
                     }
                 },
                 error: function (error) {
@@ -186,6 +205,7 @@ $(document).ready(function () {
                         $('textarea[name=message]').css({
                             border: '1px solid green'
                         });
+                        return false
                     }
                 }
             });
