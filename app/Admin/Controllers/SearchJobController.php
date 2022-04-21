@@ -29,9 +29,7 @@ class SearchJobController extends AdminController
         $grid->column('title', __('Title'));
         $grid->column('description', __('Description'));
         $grid->column('work_type', 'Work Type')->using(['Part Time', 'Full Time', 'Freelancer']);
-        $grid->column('tarief', __('Tarief'));
         $grid->column('duration', __('Duration'));
-        $grid->column('location', __('Location'));
 
         return $grid;
     }
@@ -49,9 +47,7 @@ class SearchJobController extends AdminController
         $show->field('title', __('Title'));
         $show->field('description', __('Description'));
         $show->field('work_type', 'Work Type')->using(['Part Time', 'Full Time', 'Freelancer']);
-        $show->field('tarief', __('Tarief'));
         $show->field('duration', __('Duration'));
-        $show->field('location', __('Location'));
 
         return $show;
     }
@@ -68,10 +64,8 @@ class SearchJobController extends AdminController
         $form->text('title', __('Title'));
         $form->text('description', __('Description'));
         $form->radio('work_type', 'Work Type')->options(['Part Time', 'Full Time', 'Freelancer'])->default('Part Time')->stacked();
-        $form->text('tarief', __('Tarief'));
         $form->text('duration', __('Duration'));
         $form->image('images', __('Images'));
-        $form->text('location', __('Location'));
 
         return $form;
     }

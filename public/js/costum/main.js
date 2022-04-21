@@ -252,17 +252,6 @@ function search() {
                             </div>
                         </div>
                         <div class="item-info">
-                            <div class="item-info-name">
-                                <h3>over de opdracht</h3>
-                            </div>
-                            <div class="item-tarif">
-                                <i class="fa-solid fa-euro-sign"></i>
-                                <span>${data[i].tarief}</span>
-                            </div>
-                            <div class="item-location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>${data[i].location}</span>
-                            </div>
                             <div class="item-hours">
                                 <i class="fa-solid fa-clock"></i>
                                 <span>${data[i].duration}</span>
