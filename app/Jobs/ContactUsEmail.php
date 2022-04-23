@@ -37,7 +37,7 @@ class ContactUsEmail implements ShouldQueue
      */
     public function handle()
     {
-        $to = config('username');
+        $to = config('mail.username');
 
         Mail::to($to)->send(new ContactUsMail((array)$this->requests));
     }
