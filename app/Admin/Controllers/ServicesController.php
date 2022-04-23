@@ -61,7 +61,7 @@ class ServicesController extends AdminController
         $form = new Form(new Services());
 
         $form->text('title', __('Title'));
-        $form->text('description', __('Description'));
+        $form->ckeditor('description', __('Description'));
         $form->icon('icon', __('Icon'));
 
         return $form;

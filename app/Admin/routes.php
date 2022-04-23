@@ -14,5 +14,9 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('jobs/list', SearchJobController::class);
     $router->resource('services/list', ServicesController::class);
+    $router->resource('footer/list', FooterController::class);
+    $router->resource('social/list', SocialController::class);
+    $router->resource('banner/list', BannerController::class);
+    $router->resource('contact/info/list', ContactInfoController::class);
 
 });

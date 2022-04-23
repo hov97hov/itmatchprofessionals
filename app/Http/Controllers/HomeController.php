@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BannerText;
+use App\Models\Footer;
+use App\Models\SocialLink;
 use App\Services\SearchJobService;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -20,7 +22,10 @@ class HomeController extends Controller
     public function index()
     {
         $vacancies = $this->searchJobService->list();
+        $footer = Footer::query()->get();
+        $footerSocial = SocialLink::query()->get();
+        $bannerText = BannerText::query()->get();
 
-        return view('content.index', ['vacancies' => $vacancies]);
+        return view('content.index', ['vacancies' => $vacancies, 'footer' => $footer, 'social' => $footerSocial, 'banner' => $bannerText]);
     }
 }

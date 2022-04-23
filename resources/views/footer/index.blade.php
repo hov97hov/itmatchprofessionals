@@ -2,32 +2,25 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-item footer-search-trending">
-                <div class="trending-title">
-                    <h3>Company</h3>
-                </div>
                 <ul>
                     <li>
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/download-over">Over ons</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-item footer-search-trending">
-                <div class="trending-title">
-                    <h3>Support</h3>
-                </div>
-                <ul>
-                    <li>
-                        <a href="#">Vacatures</a>
-                    </li>
-                    <li>
-                        <a href="/download-veelgestelde">Veelgestelde vragen</a>
+                        <a href="#jobListing">Vacatures</a>
                     </li>
                     <li>
                         <a href="/contact-us">Contact</a>
                     </li>
+                </ul>
+            </div>
+            <div class="footer-item footer-search-trending">
+                <ul>
+                    @foreach($footer as $footerName)
+                    <li>
+                        <a href="{{route('footer-item', $footerName->id)}}">{{$footerName->title}}</a>
+                    </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="footer-item footer-search-icon">
@@ -35,18 +28,11 @@
                     <h3>Volg ons:</h3>
                 </div>
                 <ul>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </li>
+                    @foreach($social as $item)
+                        <li>
+                            <a target="_blank" href="{{$item->url}}"><i class="fa fab {{$item->icon}}"></i></a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

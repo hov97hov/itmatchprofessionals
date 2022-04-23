@@ -9,8 +9,10 @@
                 <div class="banner-content-search">
                     <div class="position-info">
                         <div class="banner-text">
-                            <h1>Contact Us</h1>
-                            <p>Find your dream jobs in our powerful career website template.</p>
+                            @foreach($banner as $text)
+                                <h1>{{$text->title_contact_page}}</h1>
+                                <p>{{$text->info_contact_page}}</p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -63,15 +65,15 @@
                     </div>
                     <div class="address">
                         <h3>Address</h3>
-                        <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+                        <p>{{$contactInfo->address ?? ''}}</p>
                     </div>
                     <div class="phone">
                         <h3>Phone</h3>
-                        <a href="#">+1 232 3235 324</a>
+                        <p style="color: cornflowerblue">{{$contactInfo->phone ?? ''}}</p>
                     </div>
                     <div class="email-address">
                         <h3>Email Address</h3>
-                        <a href="#">youremail@domain.com</a>
+                        <p style="color: cornflowerblue">{{$contactInfo->email ?? ''}}</p>
                     </div>
                 </div>
             </div>

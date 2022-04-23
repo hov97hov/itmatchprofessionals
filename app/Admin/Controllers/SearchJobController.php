@@ -47,7 +47,6 @@ class SearchJobController extends AdminController
         $show->field('title', __('Title'));
         $show->field('description', __('Description'));
         $show->field('work_type', 'Work Type')->using(['Part Time', 'Full Time', 'Freelancer']);
-        $show->field('duration', __('Duration'));
 
         return $show;
     }
@@ -62,9 +61,8 @@ class SearchJobController extends AdminController
         $form = new Form(new Vacancy());
 
         $form->text('title', __('Title'));
-        $form->text('description', __('Description'));
+        $form->ckeditor('description', __('Description'));
         $form->radio('work_type', 'Work Type')->options(['Part Time', 'Full Time', 'Freelancer'])->default('Part Time')->stacked();
-        $form->text('duration', __('Duration'));
         $form->image('images', __('Images'));
 
         return $form;

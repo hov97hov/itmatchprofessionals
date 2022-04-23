@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactUsRequest;
+use App\Models\BannerText;
+use App\Models\ContactInfo;
+use App\Models\Footer;
+use App\Models\SocialLink;
 use App\Services\ContactUsService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -22,7 +26,12 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+        $footer = Footer::query()->get();
+        $footerSocial = SocialLink::query()->get();
+        $bannerText = BannerText::query()->get();
+        $contactInfo = ContactInfo::query()->first();
+
+        return view('contact.index', ['footer' => $footer, 'social' => $footerSocial, 'banner' => $bannerText, 'contactInfo' => $contactInfo]);
     }
 
     /**
@@ -35,8 +44,6 @@ class ContactUsController extends Controller
         $data = $request->validated();
 
         return $this->contactUsService->sendContactMail($data);
-
-
     }
 
 }

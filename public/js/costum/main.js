@@ -242,22 +242,17 @@ function search() {
                         });
                         var elem = [];
                         for (let i = 0; i < data.length; i++) {
-                            elem += ` <div class="job-list-item">
-                        <div class="item-type">Frelacner</div>
-                        <div class="item-img-title">
-                            <img src="/vacancy/${data[i].images}" alt="">
-                            <div class="title">
-                                <h1>${data[i].title}</h1>
-                                <h3>${data[i].description}</h3>
+                            elem += `<a href="/job-item/${data[i].id}">
+                            <div class="job-list-item">
+                                <div class="item-type">Frelacner</div>
+                                <div class="item-img-title">
+                                    <img src="/vacancy/${data[i].images}" alt="">
+                                    <div class="title">
+                                        <h1>${data[i].title}</h1>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item-info">
-                            <div class="item-hours">
-                                <i class="fa-solid fa-clock"></i>
-                                <span>${data[i].duration}</span>
-                            </div>
-                        </div>
-                    </div>`
+                                  </a>`
                         }
                     } else {
                         $('.search-result').hide()

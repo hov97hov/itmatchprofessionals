@@ -9,8 +9,10 @@
                 <div class="banner-content-search">
                     <div class="position-info">
                         <div class="banner-text">
-                            <h1>Our Services</h1>
-                            <p>Find your dream jobs in our powerful career website template.</p>
+                            @foreach($banner as $text)
+                                <h1>{{$text->title_services_page}}</h1>
+                                <p>{{$text->info_services_page}}</p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -24,16 +26,15 @@
             <div class="service-content">
                 @foreach($services as $service)
                     <div class="service-item">
-                    <div class="icon">
-                        <i class="fa {{$service->icon}}"></i>
+                        <a href="{{route('service-item', $service->id)}}">
+                            <div class="icon">
+                                <i class="fa {{$service->icon}}"></i>
+                            </div>
+                            <div class="title">
+                                <h3>{{$service->title}}</h3>
+                            </div>
+                        </a>
                     </div>
-                    <div class="title">
-                        <h3>{{$service->title}}</h3>
-                    </div>
-                    <div class="text">
-                        <p>{{$service->description}}</p>
-                    </div>
-                </div>
                 @endforeach
                 <div class="paginate">
                     {{ $services->links() }}

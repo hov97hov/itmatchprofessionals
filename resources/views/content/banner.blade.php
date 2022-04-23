@@ -5,8 +5,10 @@
             <div class="banner-content-search">
                 <div class="position-info">
                     <div class="banner-text">
-                        <h1>A Powerful Career Website Template</h1>
-                        <p>Find your dream jobs in our powerful career website template.</p>
+                        @foreach($banner as $text)
+                        <h1>{{$text->title_home_page}}</h1>
+                        <p>{{$text->title_home_page}}</p>
+                        @endforeach
                     </div>
                     <div class="search-job">
                         <form id="searchJob">
