@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BannerText;
 use App\Models\Footer;
+use App\Models\SignUp;
 use App\Models\SocialLink;
 use App\Services\SearchJobService;
 
@@ -25,7 +26,14 @@ class HomeController extends Controller
         $footer = Footer::query()->get();
         $footerSocial = SocialLink::query()->get();
         $bannerText = BannerText::query()->get();
+        $SignUp = SignUp::query()->get();
 
-        return view('content.index', ['vacancies' => $vacancies, 'footer' => $footer, 'social' => $footerSocial, 'banner' => $bannerText]);
+        return view('content.index', [
+            'vacancies' => $vacancies,
+            'footer' => $footer,
+            'social' => $footerSocial,
+            'banner' => $bannerText,
+            'signUp' => $SignUp
+        ]);
     }
 }

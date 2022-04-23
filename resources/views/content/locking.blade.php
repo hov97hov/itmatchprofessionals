@@ -3,8 +3,10 @@
         <div class="container">
             <div class="locking-items">
                 <div class="locking-text">
-                    <h1>Looking For A Job?</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci impedit.</p>
+                    @foreach($signUp as $sign)
+                        <h1>{{$sign->title}}</h1>
+                        <p>{{$sign->description}}</p>
+                    @endforeach
                 </div>
                 <div class="locking-btn">
                     <a href="#">Sign Up</a>

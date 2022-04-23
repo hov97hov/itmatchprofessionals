@@ -18,5 +18,6 @@ Route::group([
     $router->resource('social/list', SocialController::class);
     $router->resource('banner/list', BannerController::class);
     $router->resource('contact/info/list', ContactInfoController::class);
+    $router->resource('signUp/list', SignUpController::class);
 
 });
