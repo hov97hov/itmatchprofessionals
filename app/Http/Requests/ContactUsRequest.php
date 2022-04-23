@@ -33,7 +33,7 @@ class ContactUsRequest extends FormRequest
             'last_name' => ['required', 'string', 'min:2'],
             'email' => ['required', 'email'],
             'subject' => ['nullable', 'string', 'min:10'],
-            'message' => ['required', 'string', 'min:50', 'max:255']
+            'message' => ['required', 'string', 'min:20', 'max:255']
 
         ];
     }
