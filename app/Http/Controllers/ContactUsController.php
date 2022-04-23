@@ -29,7 +29,7 @@ class ContactUsController extends Controller
         $footer = Footer::query()->get();
         $footerSocial = SocialLink::query()->get();
         $bannerText = BannerText::query()->get();
-        $contactInfo = ContactInfo::query()->first();
+        $contactInfo = ContactInfo::query()->orderBy('id', 'DESC')->limit(1)->get();
 
         return view('contact.index', ['footer' => $footer, 'social' => $footerSocial, 'banner' => $bannerText, 'contactInfo' => $contactInfo]);
     }

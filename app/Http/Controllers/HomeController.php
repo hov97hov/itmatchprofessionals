@@ -26,7 +26,7 @@ class HomeController extends Controller
         $footer = Footer::query()->get();
         $footerSocial = SocialLink::query()->get();
         $bannerText = BannerText::query()->get();
-        $SignUp = SignUp::query()->get();
+        $SignUp = SignUp::query()->orderBy('id', 'DESC')->limit(1)->get();
 
         return view('content.index', [
             'vacancies' => $vacancies,
