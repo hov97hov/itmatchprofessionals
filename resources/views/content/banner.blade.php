@@ -7,7 +7,7 @@
                     <div class="banner-text">
                         @foreach($banner as $text)
                         <h1>{{$text->title_home_page}}</h1>
-                        <p>{{$text->title_home_page}}</p>
+                        <p>{{$text->info_home_page}}</p>
                         @endforeach
                     </div>
                     <div class="search-job">
