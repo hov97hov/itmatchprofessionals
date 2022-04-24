@@ -94,7 +94,7 @@ ul {
     display: none;
     color: #000000;
     margin-left: 20px;
-    font-size: 22px;
+    font-size: 40px;
     cursor: pointer;
 }
 .header .header-container header .header-mobile-menu {
@@ -1145,7 +1145,7 @@ ul {
         width: 100%;
     }
     .header .header-container header .header-logo a {
-        width: 80px;
+        width: 120px;
     }
     .search-result {
         top: 205px;
